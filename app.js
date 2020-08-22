@@ -14,7 +14,7 @@ if (input) {
 		calculatePrice(order, inventoryObj);
 		printOutput(inventoryObj);
 	} catch (e) {
-		console.log("Input format is not correct", e);
+		console.log("Input format is not correct");
 	}
 } else {
 	console.log("please provide command line input");
