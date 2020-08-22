@@ -14,9 +14,10 @@ const splitInput = (input) => {
     order[arr[3].toLowerCase()] = arr[4];
   } else {
     order.passport = arr[1];
-    // regex could be used to validate the passport
-    if (arr[1][0].toLowerCase() === "b") order.hasUkPassport = true;
-    else order.hasGermanyPassport = true;
+    // regex to validate the passport
+    if (arr[1].match(/^[Bb][0-9]{3}[a-zA-Z]{2}[a-zA-Z0-9]{7}$/)) order.hasUkPassport = true;
+    else if (arr[1].match(/^[Aa][a-zA-Z]{2}[a-zA-Z0-9]{9}$/)) order.hasGermanyPassport = true;
+    // else order.hasGermanyPassport = true;
     order[arr[2].toLowerCase()] = arr[3];
     order[arr[4].toLowerCase()] = arr[5];
   }
